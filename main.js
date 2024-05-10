@@ -1,17 +1,17 @@
 const { Bot } = require("grammy");
+const http = require("http");
 require("dotenv").config();
 
 const { TEST_BOT_TOKEN } = process.env;
 
-console.log(TEST_BOT_TOKEN);
 const bot = new Bot(TEST_BOT_TOKEN);
 
 const getDataFromDocs = async () => {
   try {
-    const response = await fetch(
-      "https://docs.googleapis.com/v1/documents/1-A8eNdbSzKUQmO-Gva9U4iodO1aoOtk8IcsudAJavok"
+    const response = await http.get(
+      "http://sheets.googleapis.com/v4/1-A8eNdbSzKUQmO-Gva9U4iodO1aoOtk8IcsudAJavok/values/Sheet1!B4"
     );
-    const data = await response.json();
+    const data = response;
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
