@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Glass",
+    "Water Pipes": [
+      "Most Common Water Pipe Types (future HSO blog post)",
+      "Oil burners"
+    ],
+    "Water Pipe Accessories": [
+      "Bangers",
+      "Percolators",
+      "Downstems",
+      "Ash Catchers"
+    ],
+    "Dry Pipes": ["Hand Pipes", "Chillums", "Nectar Collectors"]
+  },
+  {
+    "title": "Kratom",
+    "General Knowledge": [
+      "Common Uses",
+      "Medical Benefits",
+      "Strain Genetics",
+      "Vein Colors",
+      "Dosage Guidance",
+      "Alkaloids",
+      "Common Drug Interaction"
+    ],
+    "Common Product Types": ["Whole Herb", "Extracts", "Edibles & Drinks"]
+  },
+  {
+    "title": "Hemp",
+    "General Knowledge": [
+      "2018 Farm Bill",
+      "Sativas vs Indicas",
+      "Hemp vs Cannabis",
+      "Non-Psychoactive Cannabinoids",
+      "Psychoactive Cannabinoids",
+      "Terpenes"
+    ],
+    "Common Product Types": [
+      "Flower",
+      "Cartridges",
+      "Edibles",
+      "Concentrates",
+      "Disposables"
+    ],
+    "FADE": []
+  },
+  {
+    "title": "Vapes",
+    "Disposable Vapes": ["Lost Mary", "Elf Bar", "Geek Bar", "Raz (TN9000)"],
+    "Reuseable Vapes": [
+      "Mods & Kits",
+      "Pods, Tanks, & Coils",
+      "Batteries",
+      "Troubleshooting Tips"
+    ]
+  },
+  {
+    "title": "Supplements",
+    "Detox Products": [],
+    "Inositol & Lactose": []
+  },
+  {
+    "title": "Hookah & Shisha",
+    "Hookah Lore": [],
+    "Hookah Maintenence": [],
+    "Shisha": []
+  }
+]
