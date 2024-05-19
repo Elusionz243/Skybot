@@ -5,41 +5,112 @@ require("dotenv").config();
 const { TEST_BOT_TOKEN } = process.env;
 
 // Load Menu Options
+const skybotMenu = require("./utils/skybot.json");
 const trainingMenuButtons = require("./utils/training.json");
 const humanResourcesMenuButtons = require("./utils/hr.json");
 
 const bot = new Bot(TEST_BOT_TOKEN);
+
+const selectAnOption = `Select an option below! 👇`;
+const startMessage = `Welcome to Skybot!\n\nTo begin, ${selectAnOption}`;
+let activeMessage = "";
 
 // Load Menu
 const mainMenu = new Menu("root-menu")
   .submenu("Training", "training-menu")
   .submenu("Human Resources", "human-resources-menu");
 
+const tempMenu = new Menu("temp-menu");
+const tempTrainingMenu = new Menu("temp-training-menu");
+
+const generateTempMenu = (ctx, list) => {
+  if (list.length > 0) {
+    return;
+  }
+
+  for (const item of list) {
+    const { title, content } = item;
+    tempMenu.submenu(title, `${title}-menu`).row();
+    for(const buttons of content) {
+      const { title, content } = buttons;
+      tempTrainingMenu.text(title, (ctx) => {
+      });
+    }
+  }
+};
+
 const trainingMenu = new Menu("training-menu")
-  .submenu("Glass", "glass-menu")
+  .text("Glass", (ctx) => {
+    if (activeMessage === "Glass") return;
+    activeMessage = "Glass";
+    generateMessage(ctx, trainingMenuButtons[0]);
+  })
   .row()
-  .submenu("Kratom", "kratom-menu")
+  .text("Kratom", (ctx) => {
+    if (activeMessage === "Kratom") return;
+    activeMessage = "Kratom";
+    generateMessage(ctx, trainingMenuButtons[1]);
+  })
   .row()
-  .submenu("Hemp", "hemp-menu")
+  .text("Hemp", (ctx) => {
+    if (activeMessage === "Hemp") return;
+    activeMessage = "Hemp";
+    generateMessage(ctx, trainingMenuButtons[2]);
+  })
   .row()
-  .submenu("Vapes", "vapes-menu")
+  .text("Vapes", (ctx) => {
+    if (activeMessage === "Vapes") return;
+    activeMessage = "Vapes";
+    generateMessage(ctx, trainingMenuButtons[3]);
+  })
   .row()
-  .submenu("Supplements", "supplements-menu")
+  .text("Supplements", (ctx) => {
+    if (activeMessage === "Supplements") return;
+    activeMessage = "Supplements";
+    generateMessage(ctx, trainingMenuButtons[4]);
+  })
   .row()
-  .submenu("Hookah & Shisha", "hookah-menu")
+  .text("Hookah & Shisha", (ctx) => {
+    if (activeMessage === "Hookah & Shisha") return;
+    activeMessage = "Hookah & Shisha";
+    generateMessage(ctx, trainingMenuButtons[5]);
+  })
   .row()
-  .back("Go Back");
+  .back("Go Back", (ctx) => ctx.editMessageText(startMessage));
 
 const humanResourcesMenu = new Menu("human-resources-menu")
-  .text("Benefits", (ctx) => ctx.reply("www.Dontclickme.com"))
+  .text("Benefits", (ctx) => {
+    if (activeMessage === "Benefits") return;
+    activeMessage = "Benefits";
+    const { title, link } = humanResourcesMenuButtons[0];
+    ctx.editMessageText(`[*${title}*](${link})`, { parse_mode: "Markdownv2" });
+  })
   .row()
-  .text("Employee Handbook", (ctx) => ctx.reply("www.Dontclickme.com/2"))
+  .text("Employee Handbook", (ctx) => {
+    if (activeMessage === "Employee Handbook") return;
+    activeMessage = "Employee Handbook";
+    const { title, link } = humanResourcesMenuButtons[1];
+    ctx.editMessageText(`[*${title}*](${link})`, { parse_mode: "Markdownv2" });
+  })
   .row()
-  .text("Organization Chart", (ctx) => ctx.reply("www.Dontclickme.com/3"))
+  .text("Organization Chart", (ctx) => {
+    if (activeMessage === "Organization Chart") return;
+    activeMessage = "Organization Chart";
+    const { title, link } = humanResourcesMenuButtons[2];
+    ctx.editMessageText(`[*${title}*](${link})`, { parse_mode: "Markdownv2" });
+  })
   .row()
-  .text("Hazel History", (ctx) => ctx.reply("www.Dontclickme.com/4"))
+  .text("Hazel History", (ctx) => {
+    if (activeMessage === "Hazel History") return;
+    activeMessage = "Hazel History";
+    const { title, link } = humanResourcesMenuButtons[3];
+    ctx.editMessageText(`[*${title}*](${link})\n\n`, {
+      parse_mode: "Markdownv2",
+    });
+  })
   .row()
-  .back("Go Back");
+  .back("Go Back", (ctx) => ctx.editMessageText(startMessage));
+
 /**
  * Generates menu options for the main menu.
  * @param {Object} ctx - The context object.
@@ -47,15 +118,24 @@ const humanResourcesMenu = new Menu("human-resources-menu")
  * @returns {Promise<void>}
  */
 
-const generateSubMenu = (menuButtons) => {
-  // Iterate over the menu buttons and add them to the main menu
-  for (let i = 0; i < menuButtons.length; i++) {
-    const category = menuButtons[i];
-
-    // Add a new menu option for the category title
-    mainMenu.text(category.title, (ctx) => ctx.reply(category.title)).row();
+const generateMessage = async (ctx, list) => {
+  if (list.length > 0) {
+    return;
   }
 
+  let fullMD = `*__${list.title}__*\n`;
+
+  for (let key in list) {
+    if (key !== "title") {
+      fullMD += `\n*${key}*\n`;
+      for (let i = 0; i < list[key].length; i++) {
+        const item = list[key][i];
+        fullMD += `[*${item.title}*](${item.link})\n`;
+      }
+    }
+  }
+  ctx.editMessageText(`${fullMD}`, { parse_mode: "MarkdownV2" });
+  return;
 };
 
 mainMenu.register(trainingMenu);
@@ -64,7 +144,7 @@ mainMenu.register(humanResourcesMenu);
 bot.use(mainMenu);
 
 bot.command("start", (ctx) =>
-  ctx.reply("Select an option from below 👇", { reply_markup: mainMenu })
+  ctx.reply(startMessage, { reply_markup: mainMenu })
 );
 
 bot.start();
