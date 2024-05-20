@@ -20,23 +20,21 @@ const mainMenu = new Menu("root-menu")
   .submenu("Training", "training-menu")
   .submenu("Human Resources", "human-resources-menu");
 
-const tempMenu = new Menu("temp-menu");
 const tempTrainingMenu = new Menu("temp-training-menu");
 
-const generateTempMenu = (ctx, list) => {
-  if (list.length > 0) {
+const generateTempMenu = (list) => {
+  if (list.length < 0) {
     return;
   }
 
-  for (const item of list) {
-    const { title, content } = item;
-    tempMenu.submenu(title, `${title}-menu`).row();
-    for(const buttons of content) {
-      const { title, content } = buttons;
-      tempTrainingMenu.text(title, (ctx) => {
-      });
+  for (let i = 0; i < list.length; i++) {
+    for (let value of list[i].content) {
+      const { title, link } = value;
+      tempTrainingMenu.text(title).row();
     }
   }
+
+  return tempTrainingMenu;
 };
 
 const trainingMenu = new Menu("training-menu")
@@ -138,14 +136,15 @@ const generateMessage = async (ctx, list) => {
   return;
 };
 
-mainMenu.register(trainingMenu);
-mainMenu.register(humanResourcesMenu);
+// mainMenu.register(tempMenu);
+mainMenu.register(tempTrainingMenu);
 
 bot.use(mainMenu);
 
-bot.command("start", (ctx) =>
-  ctx.reply(startMessage, { reply_markup: mainMenu })
-);
+bot.command("start", async (ctx) => {
+  generateTempMenu(skybotMenu);
+  ctx.reply(startMessage, { reply_markup: tempMenu });
+});
 
 bot.start();
 console.log("Bot started");
