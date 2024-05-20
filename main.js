@@ -15,66 +15,73 @@ const selectAnOption = `Select an option below! 👇`;
 const startMessage = `Welcome to Skybot!\n\nTo begin, ${selectAnOption}`;
 let activeMessage = "";
 
+const trainingProductsSection = skybotMenu[0].Training[0].Products;
+const trainingSecuritySection = skybotMenu[0].Training[1];
+const trainingGeneralSection = skybotMenu[0].Training[2];
+
+// console.log(trainingGeneralSection);
 // Load Menu
 const mainMenu = new Menu("root-menu")
   .submenu("Training", "training-menu")
+  .row()
   .submenu("Human Resources", "human-resources-menu");
 
-const tempTrainingMenu = new Menu("temp-training-menu");
-
-const generateTempMenu = (list) => {
-  if (list.length < 0) {
-    return;
-  }
-
-  for (let i = 0; i < list.length; i++) {
-    for (let value of list[i].content) {
-      const { title, link } = value;
-      tempTrainingMenu.text(title).row();
-    }
-  }
-
-  return tempTrainingMenu;
-};
-
 const trainingMenu = new Menu("training-menu")
+  .submenu("Products", "training-products-menu")
+  .row()
+  .text("Security & Compliance", (ctx) => {
+    if (activeMessage === "Security & Compliance") return;
+    activeMessage = "Security & Compliance";
+    generateMessage(ctx, trainingSecuritySection);
+  })
+  .row()
+  .text("General Training", (ctx) => {
+    if (activeMessage === "General Training") return;
+    activeMessage = "General Training";
+    generateMessage(ctx, trainingGeneralSection);
+  })
+  .row()
+  .back("Go Back");
+
+const trainingProductsMenu = new Menu("training-products-menu")
   .text("Glass", (ctx) => {
-    if (activeMessage === "Glass") return;
-    activeMessage = "Glass";
-    generateMessage(ctx, trainingMenuButtons[0]);
+    if (activeMessage === trainingProductsSection[0].title) return;
+    activeMessage = trainingProductsSection[0].title;
+    console.log(trainingProductsSection[0].title);
+    generateMessage(ctx, trainingProductsSection[0]);
   })
   .row()
   .text("Kratom", (ctx) => {
     if (activeMessage === "Kratom") return;
     activeMessage = "Kratom";
-    generateMessage(ctx, trainingMenuButtons[1]);
+    generateMessage(ctx, trainingProductsSection[1]);
   })
   .row()
   .text("Hemp", (ctx) => {
     if (activeMessage === "Hemp") return;
     activeMessage = "Hemp";
-    generateMessage(ctx, trainingMenuButtons[2]);
+    generateMessage(ctx, trainingProductsSection[2]);
   })
   .row()
   .text("Vapes", (ctx) => {
     if (activeMessage === "Vapes") return;
     activeMessage = "Vapes";
-    generateMessage(ctx, trainingMenuButtons[3]);
+    generateMessage(ctx, trainingProductsSection[3]);
   })
   .row()
   .text("Supplements", (ctx) => {
     if (activeMessage === "Supplements") return;
     activeMessage = "Supplements";
-    generateMessage(ctx, trainingMenuButtons[4]);
+    generateMessage(ctx, trainingProductsSection[4]);
   })
   .row()
   .text("Hookah & Shisha", (ctx) => {
     if (activeMessage === "Hookah & Shisha") return;
     activeMessage = "Hookah & Shisha";
-    generateMessage(ctx, trainingMenuButtons[5]);
+    generateMessage(ctx, trainingProductsSection[5]);
   })
   .row()
-  .back("Go Back", (ctx) => ctx.editMessageText(startMessage));
+  .back("Go Back");
 
 const humanResourcesMenu = new Menu("human-resources-menu")
   .text("Benefits", (ctx) => {
@@ -121,14 +128,13 @@ const generateMessage = async (ctx, list) => {
     return;
   }
 
-  let fullMD = `*__${list.title}__*\n`;
+  let fullMD = list.title && `*__${list.title}__*\n\n`;
 
   for (let key in list) {
     if (key !== "title") {
-      fullMD += `\n*${key}*\n`;
+      fullMD += `*${key}*\n`;
       for (let i = 0; i < list[key].length; i++) {
-        const item = list[key][i];
-        fullMD += `[*${item.title}*](${item.link})\n`;
+        fullMD += `*\t[${list[key][i].title}](${list[key][i].link})*\n`;
       }
     }
   }
@@ -136,14 +142,14 @@ const generateMessage = async (ctx, list) => {
   return;
 };
 
-// mainMenu.register(tempMenu);
-mainMenu.register(tempTrainingMenu);
+mainMenu.register(trainingMenu);
+mainMenu.register(humanResourcesMenu);
+mainMenu.register(trainingProductsMenu);
 
 bot.use(mainMenu);
 
 bot.command("start", async (ctx) => {
-  generateTempMenu(skybotMenu);
-  ctx.reply(startMessage, { reply_markup: tempMenu });
+  ctx.reply(startMessage, { reply_markup: mainMenu });
 });
 
 bot.start();

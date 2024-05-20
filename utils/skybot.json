@@ -1,10 +1,8 @@
 [
   {
-    "title": "Training",
-    "content": [
+    "Training": [
       {
-        "title": "Products",
-        "content": [
+        "Products": [
           {
             "title": "Glass",
             "Water Pipes": [
@@ -202,8 +200,7 @@
         ]
       },
       {
-        "title": "Security & Compliance",
-        "content": [
+        "Security & Compliance": [
           {
             "title": "Theft Prevention & Proper Response",
             "link": "https://hazelskysmokeshop.com"
@@ -223,8 +220,7 @@
         ]
       },
       {
-        "title": "General Training",
-        "content": [
+        "General Training": [
           {
             "title": "Solo Shift Guide",
             "link": "https://hazelskysmokeshop.com"
@@ -238,8 +234,7 @@
     ]
   },
   {
-    "title": "Human Resources",
-    "content": [
+    "Human Resources": [
       {
         "title": "Benefits",
         "link": "https://hazelskysmokeshop.com"
