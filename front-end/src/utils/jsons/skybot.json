@@ -1,0 +1,271 @@
+[
+  {
+    "Training": [
+      {
+        "Products": [
+          {
+            "Glass": {
+              "Water Pipes": [
+                {
+                  "title": "Most Common Water Pipe Types TBA",
+                  "link": "https://hazelskysmokeshop.com/collections/water-pipes"
+                },
+                {
+                  "title": "Oil burners",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ],
+              "Water Pipe Accessories": [
+                {
+                  "title": "Bangers",
+                  "link": "https://hazelskysmokeshop.com/collections/bangers"
+                },
+                {
+                  "title": "Percolators",
+                  "link": "https://hazelskysmokeshop.com/collections/water-pipes"
+                },
+                {
+                  "title": "Downstems",
+                  "link": "https://hazelskysmokeshop.com/search?q=downstem"
+                },
+                {
+                  "title": "Ash Catchers",
+                  "link": "https://hazelskysmokeshop.com/search?q=ash+catcher"
+                }
+              ],
+              "Dry Pipes": [
+                {
+                  "title": "Hand Pipes",
+                  "link": "https://hazelskysmokeshop.com/collections/hand-pipes"
+                },
+                {
+                  "title": "Chillums",
+                  "link": "https://www.420science.com/blogs/learning-center/what-is-a-chillum#:~:text=Chillums%20can%20be%20the%20length,details%20to%20a%20small%20object."
+                },
+                {
+                  "title": "Nectar Collectors",
+                  "link": "https://hazelskysmokeshop.com/search?q=nectar+collector"
+                }
+              ]
+            }
+          },
+          {
+            "Kratom": {
+              "General Knowledge": [
+                {
+                  "title": "Common Uses",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Medical Benefits",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Strain Genetics",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Vein Colors",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Dosage Guidance",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Alkaloids",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Common Drug Interaction",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ],
+              "Common Product Types": [
+                {
+                  "title": "Whole Herb",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Extracts",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Edibles & Drinks",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ]
+            }
+          },
+          {
+            "Hemp": {
+              "General Knowledge": [
+                {
+                  "title": "2018 Farm Bill",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Sativas vs Indicas",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Hemp vs Cannabis",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Non Psychoactive Cannabinoids",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Psychoactive Cannabinoids",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Terpenes",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ],
+              "Common Product Types": [
+                { "title": "Flower", "link": "https://hazelskysmokeshop.com/" },
+                {
+                  "title": "Cartridges",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Edibles",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Concentrates",
+                  "link": "https://hazelskysmokeshop.com/"
+                },
+                {
+                  "title": "Disposables",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ],
+              "FADE": [
+                {
+                  "title": "FADE Info",
+                  "link": "https://hazelskysmokeshop.com/"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Vapes",
+            "Disposable Vapes": [
+              {
+                "title": "Lost Mary",
+                "link": "https://hazelskysmokeshop.com/"
+              },
+              { "title": "Elf Bar", "link": "https://hazelskysmokeshop.com/" },
+              { "title": "Geek Bar", "link": "https://hazelskysmokeshop.com/" },
+              {
+                "title": "Raz TN9000",
+                "link": "https://hazelskysmokeshop.com/"
+              }
+            ],
+            "Reuseable Vapes": [
+              {
+                "title": "Mods & Kits",
+                "link": "https://hazelskysmokeshop.com/"
+              },
+              {
+                "title": "Pods, Tanks, & Coils",
+                "link": "https://hazelskysmokeshop.com/"
+              },
+              {
+                "title": "Batteries",
+                "link": "https://hazelskysmokeshop.com/"
+              },
+              {
+                "title": "Troubleshooting Tips",
+                "link": "https://hazelskysmokeshop.com/"
+              }
+            ]
+          },
+          {
+            "title": "Supplements",
+            "Detox Products": [
+              {
+                "title": "Isopropyl Alcohol",
+                "link": "https://hazelskysmokeshop.com/"
+              }
+            ],
+            "Inositol & Lactose": [
+              { "title": "Inositol", "link": "https://hazelskysmokeshop.com/" }
+            ]
+          },
+          {
+            "title": "Hookah & Shisha",
+            "Hookah Lore": [
+              {
+                "title": "History of Hookah",
+                "link": "https://hazelskysmokeshop.com/"
+              }
+            ],
+            "Hookah Maintenence": [
+              { "title": "Hookah Maintenence", "link": "https://youtube.com" }
+            ],
+            "Shisha": [
+              { "title": "Al Fakher", "link": "https://hazelskysmokeshop.com/" }
+            ]
+          }
+        ]
+      },
+      {
+        "Security & Compliance": [
+          {
+            "title": "Theft Prevention & Proper Response",
+            "link": "https://hazelskysmokeshop.com"
+          },
+          {
+            "title": "Active Shooter Safety Procedures",
+            "link": "https://hazelskysmokeshop.com"
+          },
+          {
+            "title": "Laws regarding the sale of detoxes",
+            "link": "https://hazelskysmokeshop.com"
+          },
+          {
+            "title": "Laws regarding the sale of nitrous oxide",
+            "link": "https://hazelskysmokeshop.com"
+          }
+        ]
+      },
+      {
+        "General Training": [
+          {
+            "title": "Solo Shift Guide",
+            "link": "https://hazelskysmokeshop.com"
+          },
+          {
+            "title": "Keyholder Responsibilities",
+            "link": "https://hazelskysmokeshop.com"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Human Resources": [
+      {
+        "title": "Benefits",
+        "link": "https://hazelskysmokeshop.com"
+      },
+      {
+        "title": "Employee Handbook",
+        "link": "https://hazelskysmokeshop.com"
+      },
+      {
+        "title": "Organization Chart",
+        "link": "https://hazelskysmokeshop.com"
+      },
+      {
+        "title": "Hazel History",
+        "link": "https://hazelskysmokeshop.com"
+      }
+    ]
+  }
+]

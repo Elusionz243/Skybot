@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+
+  &-title {
+    color: #fff;
+  }
+
+  &-subtitle {
+    color: #fff;
+  }
+  &__content {
+    border-top: 1px solid #000;
+    width: 80vw;
+    padding: 3rem;
+    display: grid;
+    gap: 10px;
+  }
+  &__section {
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+
+    &-content {
+      display: grid;
+      max-height: 0;
+      overflow: hidden;
+      gap: 10px;
+
+      transition: max-height 0.35s ease-in-out;
+      &-item {
+        border: 1px solid #fff;
+        width: 90%;
+        background-color: #145193;
+        border-radius: 50px;
+        justify-self: center;
+        color: #fff;
+      }
+    }
+  }
+}
+.active {
+  max-height: 100%;
+  transition: max-height 0.35s ease-in-out;
+}
