@@ -1,10 +1,14 @@
-import "./App.scss";  
-import { useState, useRef } from "react";
+import "./App.scss";
+import { useState, useRef, useEffect } from "react";
 import SkybotData from "./utils/jsons/skybot.json";
 
 const tele = window.Telegram.WebApp;
 
 function App() {
+  useEffect(() => {
+    tele.ready();
+  }, []);
+
   const [list, setList] = useState([...SkybotData]);
   const trainingRef = useRef(null);
   const humanResourcesRef = useRef(null);
