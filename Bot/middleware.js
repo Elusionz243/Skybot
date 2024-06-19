@@ -1,5 +1,12 @@
 let activeMessage = "";
 
+/**
+ * Generates a formatted message for a list of items.
+ *
+ * @param {object} ctx - The context object for the current request.
+ * @param {object} list - The list of items to generate the message for.
+ * @returns {Promise<void>} - Resolves when the message has been sent.
+ */ 
 const generateMessage = async (ctx, list) => {
   if (list.length > 0 || list.title === activeMessage) {
     return;

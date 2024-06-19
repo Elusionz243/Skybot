@@ -8,7 +8,7 @@ const trainingProductsSection = skybotMenu[0].Training[0].Products;
 const trainingSecuritySection = skybotMenu[0].Training[1];
 const trainingGeneralSection = skybotMenu[0].Training[2];
 
-const humanResourcesSection = skybotMenu[1]["Human Resources"];
+const humanResourcesSection = skybotMenu[1];
 
 /**
  * Generates a menu for the root section of the application.
@@ -18,7 +18,13 @@ const humanResourcesSection = skybotMenu[1]["Human Resources"];
 const mainMenu = new Menu("root-menu")
   .submenu("Training", "training-menu")
   .row()
-  .submenu("Human Resources", "human-resources-menu");
+  .text("Human Resources", (ctx) => generateMessage(ctx, humanResourcesSection))
+  .row()
+  .text("WebApp", async (ctx) => {
+    await ctx.reply("Open App", {
+      reply_markup: { web_app: { url: "https://skybot-nine.vercel.app" } },
+    });
+  });
 
 /**
  * Generates a menu for the training section of the application.
@@ -69,7 +75,7 @@ const trainingProductsMenu = new Menu("training-products-menu")
     generateMessage(ctx, trainingProductsSection[5]);
   })
   .row()
-  .back("Go Back", "training-menu");
+  .back("Go Back");
 
 /**
  * Generates a menu for the human resources section of the application.
@@ -78,22 +84,22 @@ const trainingProductsMenu = new Menu("training-products-menu")
  */
 const humanResourcesMenu = new Menu("human-resources-menu")
   .text("Benefits", (ctx) => {
-    generateMessage(ctx, humanResourcesSection[0]);
+    generateMessage(ctx, humanResourcesSection[0], true);
   })
   .row()
   .text("Employee Handbook", (ctx) => {
-    generateMessage(ctx, humanResourcesSection[1]);
+    generateMessage(ctx, humanResourcesSection[1], true);
   })
   .row()
   .text("Organization Chart", (ctx) => {
-    generateMessage(ctx, humanResourcesSection[2]);
+    generateMessage(ctx, humanResourcesSection[2], true);
   })
   .row()
   .text("Hazel History", (ctx) => {
-    generateMessage(ctx, humanResourcesSection[3]);
+    generateMessage(ctx, humanResourcesSection[3], true);
   })
   .row()
-  .back("Go Back", (ctx) => ctx.editMessageText(startMessage));
+  .back("Go Back");
 
 module.exports = {
   mainMenu,
