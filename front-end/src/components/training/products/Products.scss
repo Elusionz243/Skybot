@@ -59,7 +59,8 @@
 
     &-item {
       width: 100%;
-      aspect-ratio: 32/12;
+      aspect-ratio: auto;
+      padding-bottom: 5rem;
     }
   }
 }
