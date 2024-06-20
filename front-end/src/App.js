@@ -7,6 +7,9 @@ const tele = window.Telegram.WebApp;
 function App() {
   useEffect(() => {
     tele.ready();
+    tele.expand();
+    tele.BackButton.isVisible = true;
+    tele.MainButton.isVisible = true;
   }, []);
 
   const [list, setList] = useState([...SkybotData]);

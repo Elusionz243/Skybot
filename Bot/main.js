@@ -1,28 +1,29 @@
 const { Bot } = require("grammy");
 require("dotenv").config();
 
-const {
-  mainMenu,
-  trainingMenu,
-  humanResourcesMenu,
-  trainingProductsMenu,
-} = require("./menus");
+// const {
+//   mainMenu,
+//   trainingMenu,
+//   humanResourcesMenu,
+//   trainingProductsMenu,
+// } = require("./menus");
 
 const { TEST_BOT_TOKEN } = process.env;
 
 const bot = new Bot(TEST_BOT_TOKEN);
-
-const selectAnOption = `Select an option below! 👇`;
-const startMessage = `Welcome to Skybot!\n\nTo begin, ${selectAnOption}`;
-
-mainMenu.register(trainingMenu);
-mainMenu.register(humanResourcesMenu);
-mainMenu.register(trainingProductsMenu);
-
-bot.use(mainMenu);
-
 bot.command("start", async (ctx) => {
-  ctx.reply(startMessage, { reply_markup: mainMenu });
+  await ctx.reply("Click the button below to open Skybot! 👇", {
+    reply_markup: {
+      keyboard: [
+        [
+          {
+            text: "Web App",
+            web_app: { url: "https://skybot-opal.vercel.app" },
+          },
+        ],
+      ],
+    },
+  });
 });
 
 bot.start();
