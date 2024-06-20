@@ -1,16 +1,9 @@
 import "./App.scss";
 import { useState, useRef, useEffect } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SkybotData from "./utils/jsons/skybot.json";
 
-const tele = window.Telegram.WebApp;
-
 function App() {
-  useEffect(() => {
-    tele.ready();
-    tele.expand();
-  }, []);
-
-  const [list, setList] = useState([...SkybotData]);
   const trainingRef = useRef(null);
   const humanResourcesRef = useRef(null);
 
@@ -36,9 +29,9 @@ function App() {
           <h2>Training</h2>
         </section>
         <div ref={trainingRef} className="App__section-content">
-          <div className="App__section-content-item">
+          <a href="/training/products" className="App__section-content-item">
             <h3>Products</h3>
-          </div>
+          </a>
           <div className="App__section-content-item">
             <h3>Security & Compliance</h3>
           </div>
