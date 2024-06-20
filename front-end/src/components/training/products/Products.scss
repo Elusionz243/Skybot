@@ -23,7 +23,7 @@
       border-bottom: 1px solid #000;
 
       &-item {
-        width: 200px;
+        width: 100%;
         aspect-ratio: 1/1;
         border: 1px solid #000;
         background-color: #fff;
@@ -36,7 +36,7 @@
           justify-content: center;
           padding: 1rem;
           img {
-            width: 100px;
+            width: 150px;
             aspect-ratio: 1/1;
           }
         }
@@ -49,6 +49,17 @@
           border-top: 1px solid rgb(200, 200, 200);
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Products-category-content {
+    grid-template-columns: repeat(auto-fit, 100%);
+
+    &-item {
+      width: 100%;
+      aspect-ratio: 32/12;
     }
   }
 }
