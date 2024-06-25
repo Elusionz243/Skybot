@@ -1,0 +1,37 @@
+.Item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 25px;
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 3rem;
+  text-decoration: none;
+  color: #000;
+
+  &-image {
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    img {
+      width: 150px;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Item {
+    // width: calc(100vw - 2rem);
+    aspect-ratio: auto;
+    padding-bottom: 5rem;
+  }
+}

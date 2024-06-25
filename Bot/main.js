@@ -1,13 +1,6 @@
 const { Bot } = require("grammy");
 require("dotenv").config();
 
-// const {
-//   mainMenu,
-//   trainingMenu,
-//   humanResourcesMenu,
-//   trainingProductsMenu,
-// } = require("./menus");
-
 const { TEST_BOT_TOKEN } = process.env;
 
 const bot = new Bot(TEST_BOT_TOKEN);
