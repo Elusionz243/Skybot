@@ -38,6 +38,13 @@ function App() {
           <div className="App__section-content-item">
             <h3>General Training</h3>
           </div>
+          <a
+            href="https://skyco-distro.com/blogs/general-education/what-makes-a-bangin-banger"
+            className="App__section-content-item"
+            target="_blank"
+          >
+            <h3>What makes a Banger Bangin'</h3>
+          </a>
         </div>
         <section
           id="human-resources"
